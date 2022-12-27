@@ -10,7 +10,15 @@ class AppCore extends StatelessWidget {
     final routerConfig = routes;
 
     return MaterialApp.router(
-      routerConfig: routerConfig,
-    );
+        debugShowCheckedModeBanner: false,
+        routerConfig: routerConfig,
+        themeMode: ThemeMode.dark,
+        darkTheme: ThemeData(
+          textTheme: const TextTheme(
+            titleMedium: TextStyle(color: Colors.lightGreenAccent),
+            titleSmall: TextStyle(color: Colors.lightGreenAccent),
+            titleLarge: TextStyle(color: Colors.lightGreen),
+          ),
+        ));
   }
 }

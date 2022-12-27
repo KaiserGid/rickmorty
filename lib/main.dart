@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'src/app_core.dart';
+import 'src/app_module.dart';
 
 void main() {
+  appSetup();
+
   runApp(const AppCore());
 }
