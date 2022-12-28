@@ -5,6 +5,7 @@ import 'package:rickmorty/src/features/character/domain/entities/character_entit
 import 'package:rickmorty/src/features/character/presenter/controllers/character_page_controller.dart';
 import 'package:rickmorty/src/features/character/presenter/pages/character_page_detail.dart';
 import 'package:rickmorty/src/features/character/presenter/store/character_store.dart';
+import 'package:rickmorty/src/features/shared/constants/colors.dart';
 import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
 
 import '../widgets/card_item_widget.dart';
@@ -25,8 +26,6 @@ class _CharacterPageState extends State<CharacterPage> {
   CharacterStore get controller => widget.characterController;
   final CharacterPageController characterPageController = CharacterPageController();
   late final ScrollController _scrollController;
-
-  get backGrounds => null;
 
   @override
   void initState() {
@@ -56,7 +55,7 @@ class _CharacterPageState extends State<CharacterPage> {
         appBar: const AppbarCustomWidget(appTitle: 'Characteres'),
         extendBody: true,
         extendBodyBehindAppBar: true,
-        backgroundColor: backGrounds,
+        backgroundColor: backGroundColor,
         body: Stack(
           children: [
             AnimatedBuilder(

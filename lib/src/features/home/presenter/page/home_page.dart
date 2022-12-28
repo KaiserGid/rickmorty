@@ -11,12 +11,26 @@ class HomePage extends StatelessWidget {
       backgroundColor: backGroundColor,
       body: Center(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () => context.pushNamed('location'), child: const Text('Locations')),
-            ElevatedButton(onPressed: () => context.pushNamed('character'), child: const Text('Characters')),
-            ElevatedButton(onPressed: () => context.pushNamed('episode'), child: const Text('Episodes')),
+            const Spacer(),
+            Image.asset(
+              'assets/images/logo.png',
+              width: MediaQuery.of(context).size.width * 0.5,
+            ),
+            ElevatedButton(
+              onPressed: () => context.pushNamed('location'),
+              style: ElevatedButton.styleFrom(backgroundColor: primary),
+              child: const Text('Locations'),
+            ),
+            ElevatedButton(onPressed: () => context.pushNamed('character'), style: ElevatedButton.styleFrom(backgroundColor: primary), child: const Text('Characters')),
+            ElevatedButton(onPressed: () => context.pushNamed('episode'), style: ElevatedButton.styleFrom(backgroundColor: primary), child: const Text('Episodes')),
+            const Spacer(),
+            Image.asset(
+              'assets/images/portal_two.gif',
+              width: MediaQuery.of(context).size.width * 0.5,
+            ),
+            const Spacer(),
           ],
         ),
       ),
