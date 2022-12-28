@@ -96,8 +96,9 @@ class EpisodeListItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            idEpisode.toString(),
+            episode.episode.toString(),
             style: Theme.of(context).textTheme.titleLarge,
+            overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),
           Text(
