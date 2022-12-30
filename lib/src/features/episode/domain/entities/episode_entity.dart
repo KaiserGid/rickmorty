@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:rickmorty/src/core/entity.dart';
 
-class EpisodeEntity {
+class EpisodeEntity extends Entity {
   String name;
   String airDate;
   String episode;

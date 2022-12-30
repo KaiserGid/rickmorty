@@ -3,6 +3,6 @@ import '../models/episode_model.dart';
 
 class EpisodenEntityAdapter {
   static EpisodeEntity adapterToModel(EpisodeModel model) {
-    return EpisodeEntity(name: model.name, airDate: model.air_date, episode: model.episode, characters: model.characters);
+    return EpisodeEntity(name: model.name, airDate: model.airdate, episode: model.episode, characters: model.characters);
   }
 }

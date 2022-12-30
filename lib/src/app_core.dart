@@ -15,9 +15,9 @@ class AppCore extends StatelessWidget {
         themeMode: ThemeMode.dark,
         darkTheme: ThemeData(
           textTheme: const TextTheme(
-            titleMedium: TextStyle(color: Colors.lightGreenAccent),
-            titleSmall: TextStyle(color: Colors.lightGreenAccent),
-            titleLarge: TextStyle(color: Colors.lightGreen),
+            titleMedium: TextStyle(color: Colors.lightGreenAccent, fontFamily: 'nanum_gothic_coding', fontSize: 20),
+            titleSmall: TextStyle(color: Colors.lightGreenAccent, fontFamily: 'nanum_gothic_coding', fontSize: 16),
+            titleLarge: TextStyle(color: Colors.lightGreen, fontFamily: 'nanum_gothic_coding', fontSize: 24),
           ),
         ));
   }

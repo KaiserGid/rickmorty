@@ -1,4 +1,6 @@
-class CharacterEntity {
+import 'package:rickmorty/src/core/entity.dart';
+
+class CharacterEntity extends Entity {
   final String name;
   final String status;
   final String species;

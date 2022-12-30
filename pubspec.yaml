@@ -21,6 +21,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: nanum_gothic_coding
+      fonts:
+        - asset: assets/fonts/nanum_gothic_coding_regular.ttf
 
   assets:
     - assets/images/
