@@ -47,21 +47,14 @@ class CardItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    character.name,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text(
-                    character.gender,
-                    style: Theme.of(context).textTheme.titleSmall,
-                  ),
-                ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  character.name,
+                  style: Theme.of(context).textTheme.titleMedium,
+                  overflow: TextOverflow.clip,
+                ),
               ),
             ),
           ],

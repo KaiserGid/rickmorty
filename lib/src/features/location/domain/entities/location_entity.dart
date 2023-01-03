@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:rickmorty/src/core/entity.dart';
 
-class LocationEntity {
+class LocationEntity extends Entity {
   String name;
   String type;
   String dimension;

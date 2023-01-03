@@ -6,6 +6,7 @@ import 'package:rickmorty/src/features/shared/constants/colors.dart';
 import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
 
 import '../../../../app_module.dart';
+import '../../../shared/widgets/logo_progress_indicator_widget.dart';
 
 class LocationHomePage extends StatefulWidget {
   final LocationStore locationController;
@@ -68,7 +69,7 @@ class _LocationHomePageState extends State<LocationHomePage> {
               return LocationListItemWidget(location: location, idLocation: index + 1);
             },
           ),
-          child: const Center(child: CircularProgressIndicator()),
+          child: const LogoProgressIndicator(),
         ),
       ),
     );
@@ -93,17 +94,11 @@ class LocationListItemWidget extends StatelessWidget {
       height: 64,
       width: MediaQuery.of(context).size.width,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            idLocation.toString(),
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const Spacer(),
-          Text(
-            location.name,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
+          Text(idLocation.toString(), style: Theme.of(context).textTheme.titleLarge),
+          const SizedBox(width: 50),
+          Expanded(child: Text(location.name, style: Theme.of(context).textTheme.titleMedium, overflow: TextOverflow.clip)),
         ],
       ),
     );
