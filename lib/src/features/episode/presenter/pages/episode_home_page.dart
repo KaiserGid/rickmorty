@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rickmorty/src/features/shared/constants/colors.dart';
 import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
+import 'package:rickmorty/src/features/shared/widgets/logo_progress_indicator_widget.dart';
 
 import '../../../../app_module.dart';
 import '../../domain/entities/episode_entity.dart';
@@ -59,16 +60,14 @@ class _EpisodeHomePageState extends State<EpisodeHomePage> {
           visible: controller.episodes.isEmpty,
           replacement: ListView.separated(
             controller: _scrollController,
-            separatorBuilder: (context, index) => const Divider(
-              height: 1,
-            ),
+            separatorBuilder: (context, index) => const Divider(height: 1),
             itemCount: controller.episodes.length,
             itemBuilder: (context, index) {
               EpisodeEntity episode = controller.episodes[index];
-              return EpisodeListItemWidget(episode: episode, idEpisode: index + 1);
+              return EpisodeListItemWidget(episode: episode);
             },
           ),
-          child: const Center(child: CircularProgressIndicator()),
+          child: const LogoProgressIndicator(),
         ),
       ),
     );
@@ -79,11 +78,9 @@ class EpisodeListItemWidget extends StatelessWidget {
   const EpisodeListItemWidget({
     Key? key,
     required this.episode,
-    required this.idEpisode,
   }) : super(key: key);
 
   final EpisodeEntity episode;
-  final int idEpisode;
 
   @override
   Widget build(BuildContext context) {
@@ -93,17 +90,11 @@ class EpisodeListItemWidget extends StatelessWidget {
       height: 64,
       width: MediaQuery.of(context).size.width,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            idEpisode.toString(),
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const Spacer(),
-          Text(
-            episode.name,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
+          Text(episode.episode.toString(), style: Theme.of(context).textTheme.titleLarge),
+          const SizedBox(width: 50),
+          Expanded(child: Text(episode.name, style: Theme.of(context).textTheme.titleMedium, overflow: TextOverflow.clip)),
         ],
       ),
     );

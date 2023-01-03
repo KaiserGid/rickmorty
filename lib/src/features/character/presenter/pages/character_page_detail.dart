@@ -25,7 +25,7 @@ class CharacterPageDetail extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.6,
               width: MediaQuery.of(context).size.width,
               child: ShaderMask(
                 shaderCallback: (bounds) => const LinearGradient(

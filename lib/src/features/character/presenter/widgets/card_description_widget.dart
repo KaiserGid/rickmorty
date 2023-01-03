@@ -17,7 +17,11 @@ class CardDescriptionWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(character.name.toUpperCase(), style: Theme.of(context).textTheme.titleLarge),
+          Text(
+            character.name.toUpperCase(),
+            style: Theme.of(context).textTheme.titleLarge,
+            // overflow: TextOverflow.ellipsis,
+          ),
           const SizedBox(height: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

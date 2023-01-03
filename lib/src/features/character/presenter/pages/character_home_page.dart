@@ -7,6 +7,7 @@ import 'package:rickmorty/src/features/character/presenter/pages/character_page_
 import 'package:rickmorty/src/features/character/presenter/store/character_store.dart';
 import 'package:rickmorty/src/features/shared/constants/colors.dart';
 import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
+import 'package:rickmorty/src/features/shared/widgets/logo_progress_indicator_widget.dart';
 
 import '../widgets/card_item_widget.dart';
 
@@ -62,23 +63,22 @@ class _CharacterPageState extends State<CharacterPage> {
                 animation: controller,
                 builder: (context, child) {
                   return Visibility(
-                    visible: controller.characteres.isEmpty,
-                    replacement: ListView.builder(
-                        controller: _scrollController,
-                        itemCount: controller.characteres.length,
-                        itemBuilder: (context, index) {
-                          CharacterEntity character = controller.characteres[index];
-                          return GestureDetector(
-                            onTap: () => Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                  builder: (context) => CharacterPageDetail(character: character),
-                                )),
-                            child: CardItemWidget(character: character),
-                          );
-                        }),
-                    child: const Center(child: CircularProgressIndicator()),
-                  );
+                      visible: controller.characteres.isEmpty,
+                      replacement: ListView.builder(
+                          controller: _scrollController,
+                          itemCount: controller.characteres.length,
+                          itemBuilder: (context, index) {
+                            CharacterEntity character = controller.characteres[index];
+                            return GestureDetector(
+                              onTap: () => Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                    builder: (context) => CharacterPageDetail(character: character),
+                                  )),
+                              child: CardItemWidget(character: character),
+                            );
+                          }),
+                      child: const LogoProgressIndicator());
                 }),
           ],
         ));

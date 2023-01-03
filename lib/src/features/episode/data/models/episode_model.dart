@@ -3,7 +3,7 @@ import 'dart:convert';
 class EpisodeModel {
   int id;
   String name;
-  String air_date;
+  String airdate;
   String episode;
   List<String> characters;
   String url;
@@ -12,7 +12,7 @@ class EpisodeModel {
   EpisodeModel({
     required this.id,
     required this.name,
-    required this.air_date,
+    required this.airdate,
     required this.episode,
     required this.characters,
     required this.url,
@@ -24,7 +24,7 @@ class EpisodeModel {
 
     result.addAll({'id': id});
     result.addAll({'name': name});
-    result.addAll({'air_date': air_date});
+    result.addAll({'air_date': airdate});
     result.addAll({'episode': episode});
     result.addAll({'characters': characters});
     result.addAll({'url': url});
@@ -37,7 +37,7 @@ class EpisodeModel {
     return EpisodeModel(
       id: map['id']?.toInt() ?? 0,
       name: map['name'] ?? '',
-      air_date: map['air_date'] ?? '',
+      airdate: map['air_date'] ?? '',
       episode: map['episode'] ?? '',
       characters: List<String>.from(map['characters']),
       url: map['url'] ?? '',
