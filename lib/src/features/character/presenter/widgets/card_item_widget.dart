@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:rickmorty/src/features/shared/constants/colors.dart';
 
-import '../../domain/entities/character_entity.dart';
+import '../../../../core/features/characteres/models/character_entity.dart';
 
 class CardItemWidget extends StatelessWidget {
-  final CharacterEntity character;
+  final Character character;
 
   const CardItemWidget({
     Key? key,

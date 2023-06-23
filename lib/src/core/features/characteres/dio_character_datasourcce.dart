@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:rickmorty/src/core/features/characteres/models/character_entity.dart';
 import 'package:rickmorty/src/features/character/constants/api_constants.dart';
 import 'package:rickmorty/src/features/character/data/datasources/character_datasource.dart';
-import 'package:rickmorty/src/features/character/data/models/character_model.dart';
 
 class DioharacterDatasource implements CharacterDatasource {
   Dio dio;
@@ -13,15 +13,15 @@ class DioharacterDatasource implements CharacterDatasource {
   });
 
   @override
-  Future<List<CharacterModel>> fetchCharacters() async {
+  Future<List<Character>> fetchCharacters() async {
     Response response;
     List<dynamic> data;
-    List<CharacterModel> characterModels;
+    List<Character> characterModels;
 
     try {
       response = await dio.get('$characterUrl?page=$page');
       data = await response.data['results'];
-      characterModels = data.map((e) => CharacterModel.fromMap(e)).toList();
+      characterModels = data.map((e) => Character.fromJson(e)).toList();
       if (response.data['info']['pages'] < response.data['info']['count']) {
         page = page + 1;
       }

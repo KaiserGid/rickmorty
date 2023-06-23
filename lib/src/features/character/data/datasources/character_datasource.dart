@@ -1,5 +1,5 @@
-import '../models/character_model.dart';
+import '../../../../core/features/characteres/models/character_entity.dart';
 
 abstract class CharacterDatasource {
-  Future<List<CharacterModel>> fetchCharacters();
+  Future<List<Character>> fetchCharacters();
 }

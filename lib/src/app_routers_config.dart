@@ -1,5 +1,4 @@
 import 'package:go_router/go_router.dart';
-import 'package:rickmorty/src/features/character/domain/entities/character_entity.dart';
 import 'package:rickmorty/src/features/character/presenter/pages/character_page_detail.dart';
 import 'package:rickmorty/src/features/episode/presenter/pages/episode_home_page.dart';
 import 'package:rickmorty/src/features/home/presenter/page/home_page.dart';
@@ -7,6 +6,7 @@ import 'package:rickmorty/src/features/location/presenter/pages/location_home_pa
 import 'package:rickmorty/src/features/location/presenter/store/location_store.dart';
 
 import 'app_module.dart';
+import 'core/features/characteres/models/character_entity.dart';
 import 'features/character/presenter/pages/character_home_page.dart';
 import 'features/character/presenter/store/character_store.dart';
 import 'features/episode/presenter/store/episode_store.dart';
@@ -27,7 +27,7 @@ final routes = GoRouter(routes: [
         GoRoute(
           name: 'detail',
           path: 'detail/:character',
-          builder: (context, state) => CharacterPageDetail(character: state.params['character'] as CharacterEntity),
+          builder: (context, state) => CharacterPageDetail(character: state.params['character'] as Character),
         )
       ]),
   GoRoute(name: 'location', path: '/location', builder: (context, state) => LocationHomePage(locationController: getIt.get<LocationStore>())),

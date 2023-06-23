@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rickmorty/src/app_module.dart';
-import 'package:rickmorty/src/features/character/domain/entities/character_entity.dart';
+import 'package:rickmorty/src/core/features/characteres/models/character_entity.dart';
 import 'package:rickmorty/src/features/character/presenter/controllers/character_page_controller.dart';
 import 'package:rickmorty/src/features/character/presenter/pages/character_page_detail.dart';
 import 'package:rickmorty/src/features/character/presenter/store/character_store.dart';
@@ -68,7 +68,7 @@ class _CharacterPageState extends State<CharacterPage> {
                           controller: _scrollController,
                           itemCount: controller.characteres.length,
                           itemBuilder: (context, index) {
-                            CharacterEntity character = controller.characteres[index];
+                            Character character = controller.characteres[index];
                             return GestureDetector(
                               onTap: () => Navigator.push(
                                   context,

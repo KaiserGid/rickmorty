@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:rickmorty/src/features/character/domain/entities/character_entity.dart';
+import 'package:rickmorty/src/core/features/characteres/models/character_entity.dart';
 import 'package:rickmorty/src/features/shared/constants/colors.dart';
 import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
 
 import '../widgets/card_description_widget.dart';
 
 class CharacterPageDetail extends StatelessWidget {
-  final CharacterEntity character;
+  final Character character;
 
   const CharacterPageDetail({
     Key? key,
