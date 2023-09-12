@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,9 +26,7 @@ class HomePage extends StatelessWidget {
                       Text('Character'.toUpperCase(), style: Theme.of(context).textTheme.titleSmall),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: GestureDetector(
-                            child: SizedBox(height: MediaQuery.of(context).size.height * 0.4, child: Image.asset('assets/images/character.gif', fit: BoxFit.cover)),
-                            onTap: () => context.pushNamed('character')),
+                        child: GestureDetector(child: SizedBox(height: MediaQuery.of(context).size.height * 0.4, child: Image.asset('assets/images/character.gif', fit: BoxFit.cover)), onTap: () => context.pushNamed('character')),
                       ),
                     ],
                   )),
@@ -38,9 +36,7 @@ class HomePage extends StatelessWidget {
                       Text('Location'.toUpperCase(), style: Theme.of(context).textTheme.titleSmall),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: GestureDetector(
-                            child: SizedBox(height: MediaQuery.of(context).size.height * 0.4, child: Image.asset('assets/images/location.gif', fit: BoxFit.cover)),
-                            onTap: () => context.pushNamed('location')),
+                        child: GestureDetector(child: SizedBox(height: MediaQuery.of(context).size.height * 0.4, child: Image.asset('assets/images/location.gif', fit: BoxFit.cover)), onTap: () => context.pushNamed('location')),
                       ),
                     ],
                   )),
@@ -50,9 +46,7 @@ class HomePage extends StatelessWidget {
                       Text('Episode'.toUpperCase(), style: Theme.of(context).textTheme.titleSmall),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: GestureDetector(
-                            child: SizedBox(height: MediaQuery.of(context).size.height * 0.4, child: Image.asset('assets/images/episode.gif', fit: BoxFit.cover)),
-                            onTap: () => context.pushNamed('episode')),
+                        child: GestureDetector(child: SizedBox(height: MediaQuery.of(context).size.height * 0.4, child: Image.asset('assets/images/episode.gif', fit: BoxFit.cover)), onTap: () => context.pushNamed('episode')),
                       ),
                     ],
                   )),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rickmorty/src/core/shared/widgets/appbar_widget.dart';
 import 'package:rickmorty/src/features/location/domain/entities/location_entity.dart';
-import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
 
 class LocationDetailPage extends StatelessWidget {
   final LocationEntity location;

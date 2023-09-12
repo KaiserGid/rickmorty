@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
-import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
-import 'package:rickmorty/src/features/shared/widgets/logo_progress_indicator_widget.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/widgets/appbar_widget.dart';
+import 'package:rickmorty/src/core/shared/widgets/logo_progress_indicator_widget.dart';
 
 import '../../../../app_module.dart';
 import '../../domain/entities/episode_entity.dart';

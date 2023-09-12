@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rickmorty/src/app_module.dart';
 import 'package:rickmorty/src/core/features/characteres/models/character_entity.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/widgets/appbar_widget.dart';
+import 'package:rickmorty/src/core/shared/widgets/logo_progress_indicator_widget.dart';
 import 'package:rickmorty/src/features/character/presenter/controllers/character_page_controller.dart';
 import 'package:rickmorty/src/features/character/presenter/pages/character_page_detail.dart';
 import 'package:rickmorty/src/features/character/presenter/store/character_store.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
-import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
-import 'package:rickmorty/src/features/shared/widgets/logo_progress_indicator_widget.dart';
+import 'package:rickmorty/src/features/character/states/character_states.dart';
 
 import '../widgets/card_item_widget.dart';
 
@@ -60,26 +61,31 @@ class _CharacterPageState extends State<CharacterPage> {
         body: Stack(
           children: [
             AnimatedBuilder(
-                animation: controller,
-                builder: (context, child) {
-                  return Visibility(
-                      visible: controller.characteres.isEmpty,
-                      replacement: ListView.builder(
-                          controller: _scrollController,
-                          itemCount: controller.characteres.length,
-                          itemBuilder: (context, index) {
-                            Character character = controller.characteres[index];
-                            return GestureDetector(
-                              onTap: () => Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                    builder: (context) => CharacterPageDetail(character: character),
-                                  )),
-                              child: CardItemWidget(character: character),
-                            );
-                          }),
-                      child: const LogoProgressIndicator());
-                }),
+              animation: controller,
+              builder: (context, child) {
+                var value = controller.state;
+                if (value is LoadingCharacterState) {
+                  return const LogoProgressIndicator();
+                } else if (value is IdleCharacterState) {
+                  return ListView.builder(
+                      controller: _scrollController,
+                      itemCount: controller.characteres.length,
+                      itemBuilder: (context, index) {
+                        Character character = controller.characteres[index];
+                        return GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) => CharacterPageDetail(character: character),
+                              )),
+                          child: CardItemWidget(character: character),
+                        );
+                      });
+                } else {
+                  return const Center(child: Text('Houve um erro'));
+                }
+              },
+            ),
           ],
         ));
   }

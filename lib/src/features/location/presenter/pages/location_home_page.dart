@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/widgets/appbar_widget.dart';
 import 'package:rickmorty/src/features/location/domain/entities/location_entity.dart';
 import 'package:rickmorty/src/features/location/presenter/controller/location_lcontroller.dart';
 import 'package:rickmorty/src/features/location/presenter/store/location_store.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
-import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
 
 import '../../../../app_module.dart';
-import '../../../shared/widgets/logo_progress_indicator_widget.dart';
+import '../../../../core/shared/widgets/logo_progress_indicator_widget.dart';
 
 class LocationHomePage extends StatefulWidget {
   final LocationStore locationController;

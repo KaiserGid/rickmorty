@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
 
 import '../../../controllers/splash_controller_i.dart';
 

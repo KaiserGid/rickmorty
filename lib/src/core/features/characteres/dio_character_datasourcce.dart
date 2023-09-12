@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:rickmorty/src/core/constants/api_constants.dart';
+import 'package:rickmorty/src/core/features/characteres/data/datasources/character_datasource.dart';
 import 'package:rickmorty/src/core/features/characteres/models/character_entity.dart';
-import 'package:rickmorty/src/features/character/constants/api_constants.dart';
-import 'package:rickmorty/src/features/character/data/datasources/character_datasource.dart';
 
 class DioharacterDatasource implements CharacterDatasource {
   Dio dio;

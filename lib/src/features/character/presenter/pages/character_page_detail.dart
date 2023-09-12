@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rickmorty/src/core/features/characteres/models/character_entity.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
-import 'package:rickmorty/src/features/shared/widgets/appbar_widget.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/widgets/appbar_widget.dart';
 
 import '../widgets/card_description_widget.dart';
 

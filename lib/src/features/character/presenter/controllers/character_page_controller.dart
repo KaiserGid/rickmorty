@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:rickmorty/src/features/character/states/character_states.dart';
 
 import '../../../../app_module.dart';
 import '../store/character_store.dart';
 
 class CharacterPageController {
-  bool isLoading = true;
-
   Future init() async {
     try {
-      await getIt<CharacterStore>().getCaracteres().then((value) => Future.delayed(const Duration(seconds: 6)));
-      isLoading = false;
+      IdleCharacterState(characters: await getIt<CharacterStore>().getCaracteres());
     } catch (e) {
       debugPrintStack();
     }

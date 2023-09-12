@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:rickmorty/src/features/character/constants/api_constants.dart';
+import 'package:rickmorty/src/core/constants/api_constants.dart';
 
 import '../data/datasourse/location_datasource.dart';
 import '../data/models/location_model.dart';

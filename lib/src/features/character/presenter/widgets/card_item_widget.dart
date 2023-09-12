@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rickmorty/src/features/shared/constants/colors.dart';
+import 'package:rickmorty/src/core/shared/constants/colors.dart';
 
 import '../../../../core/features/characteres/models/character_entity.dart';
 
